@@ -13,8 +13,8 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
-
+def step(number):
+    return 1 if number > 0 else -1
 
 # -----------------------------------------------
 
@@ -28,8 +28,9 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
 
+def ReLu(arr, cutoff=0):
+    return numpy.where(arr < cutoff, cutoff, arr)
 
 # -----------------------------------------------
 
@@ -44,7 +45,9 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
+def neural_net_layer(np_array, p_array, cutoff=0):
+    x = numpy.dot(np_array, p_array)
+    return ReLu(x, cutoff)
 
 
 # ------------------------------------------
